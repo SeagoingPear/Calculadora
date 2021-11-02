@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      CALCULADORA
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="ion-text-end">
+          <ion-badge color=undefined>
+            <span>{{num}}</span>
+            <span>{{state}}</span>
+          </ion-badge>
+        </div>
+        <ion-item lines="none">
+          <ion-input class="ion-text-end" type="text" [(ngModel)]="display" readonly="true"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="primary" expand="block" (click)="write('7')">7</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" expand="block" (click)="write('8')">8</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" expand="block" (click)="write('9')">9</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="tertiary shade" expand="block" (click)="calculate('/')">/</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col>
+          <ion-button color="primary" expand="block" (click)="write('4')">4</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="primary" expand="block" (click)="write('5')">5</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="primary" expand="block" (click)="write('6')">6</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="tertiary shade" expand="block" (click)="calculate('*')">*</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col>
+            <ion-button color="primary" expand="block" (click)="write('1')">1</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button color="primary" expand="block" (click)="write('2')">2</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button color="primary" expand="block" (click)="write('3')">3</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button color="tertiary shade" expand="block" (click)="calculate('-')">-</ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+              <ion-button color="secondary" expand="block" (click)="write('.')">.</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button color="primary" expand="block" (click)="write('0')">0</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button color="success" expand="block" (click)="calculate('=')">=</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button color="tertiary shade" expand="block" (click)="calculate('+')">+</ion-button>
+            </ion-col>
+        </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-button color="danger" expand="block" (click)="clear('all')">
+                <ion-icon name="trash-outline" slot="start"></ion-icon>
+                Limpar
+              </ion-button>
+            </ion-col>
+          </ion-row>
+  </ion-grid>
+</ion-content>
