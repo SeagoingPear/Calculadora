@@ -17,11 +17,11 @@ export class HomePage {
   calculate(operator) {
     switch(operator) {
       case '=':
-        if(isNaN(Number.parseFloat(this.display))){
-          this.display = this.num.toString();
+        if(this.display === '0' && this.num === 0) {
+          this.display = 'Syntax Error';
           this.clear('num');
+          this.clear('state');
         }
-
         switch(this.state) {
           case '+':
             this.display = (this.num + Number.parseFloat(this.display)).toString();
@@ -42,7 +42,7 @@ export class HomePage {
             this.display = (this.num / Number.parseFloat(this.display)).toString();
             this.clear('num');
             this.clear('state');
-            if(Number.parseFloat(this.display) === Infinity) {this.display = 'Syntax Error!';}
+            if(Number.parseFloat(this.display) === Infinity) {this.display = 'Syntax Error';}
           break;
         }
       break;
